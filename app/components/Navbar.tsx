@@ -3,6 +3,8 @@ import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { Link } from '@remix-run/react'
 import { Fragment } from 'react'
 
+import faviconUrl from '~/assets/favicon.svg'
+
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ')
 }
@@ -18,8 +20,8 @@ export default function Example() {
                 <div className="flex-shrink-0">
                   <Link to="/">
                     <img
-                      className="h-8 w-auto"
-                      src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
+                      className="h-12 w-auto"
+                      src={faviconUrl}
                       alt="Razor Hollow"
                     />
                   </Link>

@@ -10,10 +10,15 @@ import {
   ScrollRestoration,
 } from "@remix-run/react";
 
+import Navbar from 'app/components/Navbar'
+
 import { getUser } from "~/session.server";
 import stylesheet from "~/tailwind.css";
+import faviconUrl from "~/assets/favicon.svg"
+
 
 export const links: LinksFunction = () => [
+  {rel: 'icon', type: 'image/svg+xml', href: faviconUrl },
   { rel: "stylesheet", href: stylesheet },
   ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
 ];
@@ -32,6 +37,7 @@ export default function App() {
         <Links />
       </head>
       <body className="h-full">
+        <Navbar />
         <Outlet />
         <ScrollRestoration />
         <Scripts />
